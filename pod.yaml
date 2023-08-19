@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: http-helloworld
+  labels:
+    name: http-helloworld
+spec:
+  containers:
+  - name: http-helloworld
+    image: vitorjdev/http-helloworld
+    ports:
+      - containerPort: 8080

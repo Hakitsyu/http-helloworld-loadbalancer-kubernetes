@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-http-helloworld
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: http-helloworld
+  template:
+    metadata:
+      name: http-helloworld
+      labels:
+        app: http-helloworld
+    spec:
+      containers:
+      - name: http-helloworld
+        image: vitorjdev/http-helloworld
+        ports:
+          - containerPort: 8080
